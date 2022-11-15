@@ -21,7 +21,7 @@ class HorizontalList extends StatelessWidget {
                image_caption: 'Comics',
              ),
              Category(
-               image_location: 'images/Religious.jpg' ,
+               image_location: 'images/Religious.png' ,
                image_caption: 'Religion',
              ),
              Category(

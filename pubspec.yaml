@@ -80,6 +80,7 @@ flutter:
     - images/books/HistoricB.png
     - images/books/ReligiousB.png
     - images/books/RomanticB.png
+    - images/Religious.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
