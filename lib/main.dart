@@ -4,11 +4,13 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:book_rental_app/components/horizontal_axis.dart';
 import 'package:book_rental_app/components/horizontal_axis2.dart';
 import 'package:book_rental_app/components/Books.dart';
+import 'package:book_rental_app/pages/cart.dart';
 
 void main() {
   runApp(
       MaterialApp(
         home: HomePage(),
+        debugShowCheckedModeBanner: false,
       )
   );
 }
@@ -32,6 +34,10 @@ void main() {
              autoplay: true,
             animationCurve: Curves.fastOutSlowIn,
            animationDuration: Duration(milliseconds: 1000),
+           dotSize: 4.0,
+           indicatorBgPadding: 2.0,
+           dotBgColor: Colors.transparent,
+
        ),
        );
        return Scaffold(
@@ -45,7 +51,9 @@ void main() {
 
                new IconButton(
                    icon: Icon(Icons.shopping_cart, color: Colors.white,),
-                   onPressed: () {})
+                   onPressed: () {
+                     Navigator.push(context, MaterialPageRoute(builder: (context)=> new Cart()));
+                   })
 
              ]
          ),
@@ -69,28 +77,30 @@ void main() {
                onTap: () {},
                child: ListTile(
                  title: Text('Home Page'),
-                 leading: Icon(Icons.home),
+                 leading: Icon(Icons.home,color: Colors.teal,),
                ),
                ),
                InkWell(
                  onTap: () {},
                  child: ListTile(
                    title: Text('My Account'),
-                   leading: Icon(Icons.person),
+                   leading: Icon(Icons.person,color: Colors.teal,),
                  ),
                ),
                InkWell(
                  onTap: () {},
                  child: ListTile(
                    title: Text('My Orders'),
-                   leading: Icon(Icons.shopping_basket),
+                   leading: Icon(Icons.shopping_basket,color: Colors.teal,),
                  ),
                ),
                InkWell(
-                 onTap: () {},
+                 onTap: () {
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=> new Cart()));
+                 },
                  child: ListTile(
-                   title: Text('Categories'),
-                   leading: Icon(Icons.dashboard),
+                   title: Text('Shopping Cart'),
+                   leading: Icon(Icons.shopping_cart, color: Colors.teal,),
                  ),
                ),
 
@@ -98,7 +108,7 @@ void main() {
            onTap: () {},
            child: ListTile(
              title: Text('My Favourites'),
-             leading: Icon(Icons.favorite),
+             leading: Icon(Icons.favorite,color: Colors.teal,),
            ),
          ),
          InkWell(
@@ -112,7 +122,7 @@ void main() {
            onTap: () {},
            child: ListTile(
              title: Text('About'),
-             leading: Icon(Icons.help, color: Colors.blue),
+             leading: Icon(Icons.help),
            ),
          ),
          ],
@@ -123,15 +133,21 @@ void main() {
              image_carousel,
              //padding Widget
              new Padding( padding: const EdgeInsets.all(8.0),
-             child: new Text('Categories'),),
+             child: new Text('Categories',style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),),),
 
            //  Horizontal list view begins here
              HorizontalList(),
+             Divider(
+               thickness: 5.0,
+             ),
              new Padding( padding: const EdgeInsets.all(10.0),
-               child: new Text('Authors'),),
+               child: new Text('Authors',style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),),),
              HorizontalList2(),
+             Divider(
+               thickness: 5.0,
+             ),
              new Padding( padding: const EdgeInsets.all(20.0),
-             child: new Text('Recent Reads'),),
+             child: new Text('Recent Reads',style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),),),
 
              //Grid view
              Container(
