@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:book_rental_app/main.dart';
 
+import 'home.dart';
+
 class book_details extends StatefulWidget {
   // const book_details({Key? key}) : super(key: key);
   final book_detail_name;
